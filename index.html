@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChangeWorks Technologies | IT Products &amp; Services</title>
+  <meta name="description" content="ChangeWorks Technologies — a dual product and service-based IT firm building software products and delivering custom web, mobile, and desktop solutions." />
+
+  <!-- ==================== FONTS ====================
+       Sora  -> headings / display text (distinct geometric tech feel)
+       Inter -> body copy (highly legible at small sizes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ==================== BOOTSTRAP 5 (CDN) ==================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ==================== BOOTSTRAP ICONS (CDN) ==================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- ==================== CUSTOM BRAND STYLES ==================== -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top cw-navbar" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand cw-brand" href="#hero">Change<span>Works</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cwNavContent" aria-controls="cwNavContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="cwNavContent">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link cw-nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link cw-nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link cw-nav-link" href="#clients">Clients</a></li>
+          <li class="nav-item"><a class="nav-link cw-nav-link" href="#services">Services</a></li>
+          <li class="nav-item">
+            <a class="nav-link cw-nav-link cw-nav-cta" href="#enquiry">Get in Touch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       1. HERO + ABOUT SECTION
+       50vh hero on a tech-themed navy background.
+       Swap the background via the .cw-hero background-image rule
+       in style.css (currently a CSS circuit/grid pattern so no
+       external image dependency is required).
+       ========================================================= -->
+  <header id="hero" class="cw-hero d-flex align-items-center">
+    <div class="cw-hero-overlay"></div>
+    <div class="container position-relative text-center text-white">
+      <h1 class="cw-hero-title">ChangeWorks Technologies</h1>
+      <p class="cw-hero-subtitle mb-0">Engineering products. Delivering services. Driving change.</p>
+    </div>
+  </header>
+
+  <section id="about" class="cw-about py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <!-- ABOUT PARAGRAPH: swap this copy for the final brand narrative -->
+          <p class="cw-about-text">
+            ChangeWorks Technologies is a dual product-and-service IT firm. We design and maintain
+            our own software products for real-world problems, while partnering with businesses to
+            build custom web, mobile, and desktop solutions. Our mission is simple: combine the
+            reliability of a services partner with the ownership mindset of a product company, so
+            every client gets software that is built to last and built to grow.-test
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       2. PRODUCTS SECTION
+       Bootstrap card grid — stacks to a single column on mobile
+       via the col-12 col-md-6 col-lg-4 pattern.
+       ========================================================= -->
+  <section id="products" class="cw-section py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="cw-section-title">Our Products</h2>
+        <p class="cw-section-subtitle">Software we build, own, and continuously improve</p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Product Card: Operly (PLACEHOLDER — swap title, icon, and description) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card cw-product-card h-100">
+            <div class="card-body">
+              <div class="cw-product-icon">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <h3 class="card-title cw-product-title">Operly</h3>
+              <p class="card-text">
+                A service-worker connection platform that matches skilled workers with the people
+                who need them — streamlining bookings, scheduling, and trusted communication in
+                one place.
+              </p>
+              <a href="#" class="cw-product-link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card: Blood Link (PLACEHOLDER — swap title, icon, and description) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card cw-product-card h-100">
+            <div class="card-body">
+              <div class="cw-product-icon">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+              <h3 class="card-title cw-product-title">Blood Link</h3>
+              <p class="card-text">
+                A real-time blood donation network connecting donors, hospitals, and blood banks —
+                built to shorten response time when it matters most.
+              </p>
+              <a href="#" class="cw-product-link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card: Add more products by duplicating this block -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card cw-product-card h-100">
+            <div class="card-body">
+              <div class="cw-product-icon">
+                <i class="bi bi-kanban-fill"></i>
+              </div>
+              <h3 class="card-title cw-product-title">Your Next Product</h3>
+              <p class="card-text">
+                Placeholder for an upcoming ChangeWorks product. Duplicate this card and update the
+                icon, title, and description to add it to the grid.
+              </p>
+              <a href="#" class="cw-product-link">Learn more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. CLIENTS SECTION
+       Flexbox logo/name banner — wraps gracefully on mobile.
+       Replace the <span> text with <img> logos when available.
+       ========================================================= -->
+  <section id="clients" class="cw-clients py-5">
+    <div class="container">
+      <p class="cw-clients-label text-center mb-4">Trusted by teams at</p>
+      <div class="cw-clients-row">
+        <!-- PLACEHOLDER CLIENTS — replace each span with an <img src="logo.svg" alt="Client Name"> -->
+        <span class="cw-client-name">Nimbus Retail</span>
+        <span class="cw-client-name">Harbor Logistics</span>
+        <span class="cw-client-name">Vertex Health</span>
+        <span class="cw-client-name">Anchor Finance</span>
+        <span class="cw-client-name">Northgate Group</span>
+        <span class="cw-client-name">Litmus Labs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. SERVICES SECTION
+       ========================================================= -->
+  <section id="services" class="cw-section cw-services-section py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="cw-section-title">Services Offered</h2>
+        <p class="cw-section-subtitle">Core competencies we deliver as a service partner</p>
+      </div>
+
+      <div class="row g-4 text-center">
+
+        <div class="col-12 col-md-4">
+          <div class="cw-service-item">
+            <div class="cw-service-icon">
+              <i class="bi bi-window"></i>
+            </div>
+            <h3 class="cw-service-title">Webpages</h3>
+            <p class="cw-service-text">
+              Custom web development — from marketing sites to full web applications, built for
+              speed, accessibility, and long-term maintainability.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="cw-service-item">
+            <div class="cw-service-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3 class="cw-service-title">Mobile Applications</h3>
+            <p class="cw-service-text">
+              Cross-platform and native mobile apps using Flutter and Kotlin, backed by Firebase
+              for authentication, storage, and real-time data.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="cw-service-item">
+            <div class="cw-service-icon">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <h3 class="cw-service-title">Mac Applications</h3>
+            <p class="cw-service-text">
+              Native desktop software for macOS — purpose-built tools that feel at home on the
+              platform and integrate cleanly with existing workflows.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. ENQUIRY FORM SECTION
+       ========================================================= -->
+  <section id="enquiry" class="cw-enquiry py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="text-center mb-4">
+            <h2 class="cw-section-title">Start a Conversation</h2>
+            <p class="cw-section-subtitle">Tell us what you're building — we'll get back to you shortly</p>
+          </div>
+
+          <!-- 'needs-validation' + 'novalidate' hook into the Bootstrap-style
+               validation handled in script.js -->
+          <form id="enquiryForm" class="cw-form needs-validation" novalidate>
+
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label for="cwName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="cwName" name="name" placeholder="Your full name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="cwEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="cwEmail" name="email" placeholder="you@company.com" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="cwService" class="form-label">Service Needed</label>
+                <select class="form-select" id="cwService" name="service" required>
+                  <option value="" selected disabled>Choose a service...</option>
+                  <option value="web">Webpages / Web Development</option>
+                  <option value="mobile">Mobile Applications</option>
+                  <option value="mac">Mac Applications</option>
+                  <option value="product">Product Consultation (Operly / Blood Link)</option>
+                  <option value="other">Something Else</option>
+                </select>
+                <div class="invalid-feedback">Please select a service.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="cwMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="cwMessage" name="message" rows="5" placeholder="Tell us a bit about your project..." required></textarea>
+                <div class="invalid-feedback">Please enter a short message.</div>
+              </div>
+
+              <div class="col-12 text-center pt-2">
+                <button type="submit" class="btn cw-btn-primary btn-lg px-5">Send Enquiry</button>
+              </div>
+
+              <!-- Success alert, hidden by default; shown by script.js on valid submit -->
+              <div class="col-12">
+                <div id="cwFormSuccess" class="alert alert-success text-center mt-3 d-none" role="alert">
+                  Thanks! Your enquiry has been received — we'll be in touch soon.
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="cw-footer py-4">
+    <div class="container text-center">
+      <p class="mb-0">&copy; <span id="cwYear"></span> ChangeWorks Technologies. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== BOOTSTRAP JS BUNDLE (CDN) ==================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ==================== CUSTOM SCRIPT ==================== -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+/* =========================================================
+   CHANGEWORKS TECHNOLOGIES — BRAND STYLESHEET
+   Bootstrap 5 handles layout/grid/responsiveness.
+   This file only overrides colors, type, and details Bootstrap
+   doesn't cover out of the box.
+   ========================================================= */
+
+:root {
+  /* ---- Brand palette ---- */
+  --cw-navy: #242D52;        /* primary brand color */
+  --cw-navy-dark: #171d38;   /* darker navy for gradients/overlays */
+  --cw-lavender: #B9AEDD;    /* soft lavender accent (icons/hover) */
+  --cw-lavender-soft: #EDEAF9; /* pale lavender for tints/backgrounds */
+  --cw-ink: #1B1F2A;         /* body text color */
+  --cw-muted: #6B7280;       /* secondary/muted text */
+  --cw-bg-alt: #F6F6FB;      /* light section background */
+
+  --cw-font-display: 'Sora', sans-serif;
+  --cw-font-body: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth; /* fallback; JS also handles offset scrolling */
+}
+
+body {
+  font-family: var(--cw-font-body);
+  color: var(--cw-ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--cw-font-display);
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+.cw-navbar {
+  background-color: rgba(23, 29, 56, 0.92);
+  backdrop-filter: blur(6px);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.cw-navbar.cw-navbar-scrolled {
+  background-color: var(--cw-navy-dark);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cw-brand {
+  font-family: var(--cw-font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff !important;
+  letter-spacing: 0.01em;
+}
+
+.cw-brand span {
+  color: var(--cw-lavender);
+}
+
+.cw-nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  margin: 0 0.35rem;
+  transition: color 0.2s ease;
+}
+
+.cw-nav-link:hover,
+.cw-nav-link:focus {
+  color: var(--cw-lavender) !important;
+}
+
+.cw-nav-cta {
+  border: 1px solid var(--cw-lavender);
+  border-radius: 999px;
+  padding: 0.35rem 1rem !important;
+  margin-left: 0.5rem;
+}
+
+.cw-nav-cta:hover {
+  background-color: var(--cw-lavender);
+  color: var(--cw-navy) !important;
+}
+
+/* =========================================================
+   1. HERO + ABOUT
+   ========================================================= */
+.cw-hero {
+  position: relative;
+  min-height: 50vh; /* half-screen hero as required */
+  overflow: hidden;
+  color: #fff;
+
+  /* Tech-themed background: layered radial glows + a faint circuit/grid
+     pattern rendered purely in CSS so no external image is required.
+     SWAP OUT: replace this whole `background` rule with
+     background: linear-gradient(...), url('your-image.jpg') center/cover;
+     to use a real photograph instead. */
+  background-color: var(--cw-navy);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(185, 174, 221, 0.25), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(185, 174, 221, 0.18), transparent 45%),
+    linear-gradient(180deg, var(--cw-navy) 0%, var(--cw-navy-dark) 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 48px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 48px);
+}
+
+.cw-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(23, 29, 56, 0.55) 100%);
+  pointer-events: none;
+}
+
+.cw-hero-title {
+  font-family: var(--cw-font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.75rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.cw-hero-subtitle {
+  font-family: var(--cw-font-body);
+  font-weight: 400;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cw-about {
+  background-color: #fff;
+}
+
+.cw-about-text {
+  /* Scales cleanly on mobile via clamp() rather than a fixed px size */
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  line-height: 1.75;
+  color: var(--cw-muted);
+}
+
+/* =========================================================
+   SHARED SECTION STYLES
+   ========================================================= */
+.cw-section {
+  background-color: #fff;
+}
+
+.cw-section-title {
+  font-weight: 700;
+  color: var(--cw-navy);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.cw-section-subtitle {
+  color: var(--cw-muted);
+  font-size: 1rem;
+}
+
+/* =========================================================
+   2. PRODUCTS
+   ========================================================= */
+.cw-product-card {
+  border: 1px solid #E7E7F1;
+  border-radius: 14px;
+  padding: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cw-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(36, 45, 82, 0.1);
+  border-color: var(--cw-lavender);
+}
+
+.cw-product-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background-color: var(--cw-lavender-soft);
+  color: var(--cw-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cw-product-card:hover .cw-product-icon {
+  background-color: var(--cw-lavender);
+  color: var(--cw-navy);
+}
+
+.cw-product-title {
+  color: var(--cw-navy);
+  font-weight: 700;
+}
+
+.cw-product-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--cw-navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.cw-product-link:hover {
+  color: var(--cw-lavender);
+}
+
+.cw-product-link i {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.cw-product-link:hover i {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   3. CLIENTS
+   ========================================================= */
+.cw-clients {
+  background-color: var(--cw-bg-alt);
+}
+
+.cw-clients-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--cw-muted);
+  font-weight: 600;
+}
+
+.cw-clients-row {
+  display: flex;
+  flex-wrap: wrap;           /* wraps gracefully on small screens */
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem 3rem;
+}
+
+.cw-client-name {
+  font-family: var(--cw-font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--cw-navy);
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.cw-client-name:hover {
+  opacity: 1;
+}
+
+/* =========================================================
+   4. SERVICES
+   ========================================================= */
+.cw-services-section {
+  background-color: #fff;
+}
+
+.cw-service-item {
+  padding: 1.5rem 1rem;
+  height: 100%;
+}
+
+.cw-service-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background-color: var(--cw-navy);
+  color: var(--cw-lavender);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cw-service-item:hover .cw-service-icon {
+  background-color: var(--cw-lavender);
+  color: var(--cw-navy);
+  transform: scale(1.05);
+}
+
+.cw-service-title {
+  font-weight: 700;
+  color: var(--cw-navy);
+  margin-bottom: 0.5rem;
+}
+
+.cw-service-text {
+  color: var(--cw-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   5. ENQUIRY FORM
+   ========================================================= */
+.cw-enquiry {
+  background-color: var(--cw-bg-alt);
+}
+
+.cw-form .form-label {
+  font-weight: 600;
+  color: var(--cw-navy);
+  font-size: 0.9rem;
+}
+
+.cw-form .form-control,
+.cw-form .form-select {
+  border-radius: 8px;
+  border: 1px solid #D9D9E6;
+  padding: 0.65rem 0.9rem;
+}
+
+.cw-form .form-control:focus,
+.cw-form .form-select:focus {
+  border-color: var(--cw-lavender);
+  box-shadow: 0 0 0 0.2rem rgba(185, 174, 221, 0.35);
+}
+
+/* Primary CTA button — navy fill as requested */
+.cw-btn-primary {
+  background-color: var(--cw-navy);
+  border-color: var(--cw-navy);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.cw-btn-primary:hover,
+.cw-btn-primary:focus {
+  background-color: var(--cw-navy-dark);
+  border-color: var(--cw-navy-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.cw-footer {
+  background-color: var(--cw-navy-dark);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   RESPONSIVE TWEAKS (mobile-first adjustments Bootstrap doesn't cover)
+   ========================================================= */
+@media (max-width: 767.98px) {
+  .cw-hero {
+    min-height: 55vh; /* a touch taller on small screens so text has room */
+  }
+
+  .cw-clients-row {
+    gap: 1.25rem 2rem;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
