@@ -74,32 +74,49 @@ document.addEventListener('DOMContentLoaded', function () {
   var successAlert = document.getElementById('cwFormSuccess');
 
   if (enquiryForm) {
-    enquiryForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-      event.stopPropagation();
+  const submitBtn = enquiryForm.querySelector('button[type="submit"]');
 
-      if (!enquiryForm.checkValidity()) {
-        // Trigger Bootstrap's invalid styling on all fields
-        enquiryForm.classList.add('was-validated');
+  enquiryForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    event.stopPropagation();
 
-        // Focus the first invalid field for accessibility/usability
-        var firstInvalid = enquiryForm.querySelector(':invalid');
-        if (firstInvalid) firstInvalid.focus();
+    // 1. Validate fields
+    if (!enquiryForm.checkValidity()) {
+      enquiryForm.classList.add('was-validated');
+      const firstInvalid = enquiryForm.querySelector(':invalid');
+      if (firstInvalid) firstInvalid.focus();
+      if (successAlert) successAlert.classList.add('d-none');
+      return;
+    }
 
-        if (successAlert) successAlert.classList.add('d-none');
-        return;
-      }
+    // 2. Prevent duplicate clicks
+    if (submitBtn) submitBtn.disabled = true;
+    if (successAlert) successAlert.classList.add('d-none');
 
-      // Form is valid — replace this block with a real submission
-      // (e.g. fetch('/api/enquiry', { method: 'POST', body: new FormData(enquiryForm) }))
-      if (successAlert) {
-        successAlert.classList.remove('d-none');
-      }
+    // 3. Post directly to formsubmit.co
+    try {
+      // Replace with your real receiving email address
+      const response = await fetch('https://formsubmit.co/ajax/makeachange.3210@gmail.com', {
+        method: 'POST',
+        body: new FormData(enquiryForm),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
+      if (!response.ok) throw new Error('Submission failed');
+
+      if (successAlert) successAlert.classList.remove('d-none');
       enquiryForm.reset();
       enquiryForm.classList.remove('was-validated');
-    });
-  }
+    } catch (err) {
+      console.error(err);
+      alert('Could not send message. Please try again.');
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+}
 
   /* ---------------------------------------------------------
      Footer year — keeps the copyright year current automatically
