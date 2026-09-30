@@ -140,6 +140,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--cw-muted);
 }
 
+.cw-product-icon-img {
+  width: 62px;
+  height: 57px;
+  object-fit: fill;
+}
+
 /* =========================================================
    SHARED SECTION STYLES
    ========================================================= */
@@ -218,6 +224,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .cw-product-link:hover i {
   transform: translateX(3px);
+}
+
+.app-icon{
+  background: url("Assets/Operly-Logo.png")
 }
 
 /* =========================================================
